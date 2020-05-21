@@ -1,0 +1,25 @@
+
+<div id="wrapper" class="container" style="padding: 30px;">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <td>Product Image</td>
+                <td>Product Name</td>
+                <td>Price</td>
+                <td>Remove</td>
+
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of cartList">
+            <td><img [attr.prodId]="item.productId" style="max-width: 100px;max-height: 100px;" [src]="'assets/images/'+item.imageUrl+'.jpg'" [alt]="item.productName" /></td>
+            <td>{{item.productName}}</td>
+            <td>{{item.currentPrice}}</td>
+            <td><button class="btn btn-danger" [attr.cartId]="item.cartId" (click)="removeFromCart($event)">Remove</button></td>
+        </tr>
+    </tbody>
+    </table>
+    <div style="text-align: right;" *ngIf="cartList.length>0">
+    <button class="btn btn-primary" (click)="fillDeteails()">Check Out</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div id="wrapper" class="container" *ngIf="showProduct">
+    <div class="product-box">
+        <span class="sale_tag"></span>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <img [attr.prodId]="productId" style="max-width: 500px;max-height: 500px;" [src]="'assets/images/'+imageUrl+'.jpg'" [alt]="productName" />
+                </div>
+                <div class="col-sm-6" style="position: relative;text-align:center;">
+                <div>
+                    <a [attr.prodId]="productId" class="title">{{productName}}</a><br/>
+                    <p class="price">{{price}}</p>
+                    <p class="stock">{{inStock==true?"Available in stock":"Out of Stock"}}</p>
+                    <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+                    <div >{{cartMessage}}</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</div>

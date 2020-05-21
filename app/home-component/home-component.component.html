@@ -1,0 +1,35 @@
+		<div id="wrapper" class="container">
+			<section class="navbar main-menu">
+				<div class="navbar-inner main-menu">
+					<nav id="menu" class="pull-left">
+						<ul>
+							<li *ngFor="let item of categories"><a class="btn" (click)="categoryChange($event)" [attr.catId]="item.split('|')[1]">{{item.split('|')[0]}}</a> </li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+			<section class="main-content">													
+						<div class="row">
+							<div class="span12">
+								<div id="myCarousel" class="myCarousel carousel slide">
+									<div class="carousel-inner">
+										<div class="active item">
+											<ul class="thumbnails" style="list-style-type:none;padding-right: 0;">												
+												<li class="span3" *ngFor="let item of productList" style=" display: inline-block;padding: 20px;;">
+													<div class="product-box">
+														<span class="sale_tag"></span>
+														<p><a [attr.prodId]="item.productId" class="btn btn-link" (click)="productDetails($event)"><img [attr.prodId]="item.productId" style="max-width: 500px;max-height: 500px;" [src]="'assets/images/'+item.imageUrl+'.jpg'" [alt]="item.productName" /></a></p>
+														<a [attr.prodId]="item.productId" class="title">{{item.productName}}</a><br/>
+														<p class="price">{{item.price}}</p>
+													</div>
+												</li>
+												
+											</ul>
+										</div>
+									</div>							
+								</div>
+							</div>						
+						</div>
+						<br/>
+			</section>
+		</div>

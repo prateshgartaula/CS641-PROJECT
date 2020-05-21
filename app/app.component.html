@@ -1,0 +1,23 @@
+<div *ngIf="loggedIn">
+<div id="top-bar" class="container">
+    <div class="row">
+        <div class="span4">
+            <div class="account pull-left">
+                <ul class="user-menu">
+                    <li><button class="btn btn-info" (click)="goHome()">Home</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="span8">
+            <div class="account pull-right">
+                <ul class="user-menu">
+                    <li><p>Hi {{userName}}</p></li>
+                    <li><button class="btn btn-info" (click)="goToCart()">Your Cart</button></li>
+                    <li><button class="btn btn-danger" (click)="logout()">logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<router-outlet></router-outlet>
